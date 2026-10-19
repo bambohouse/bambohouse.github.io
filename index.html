@@ -5,15 +5,123 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BamboLens — Privacy</title>
+<title>BamboLens</title>
+<meta name="description" content="See your 3D prints at real size, on your desk, before you print. Mixed-reality STL and 3MF viewer for Meta Quest.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
 <style>
-  body { font-family: system-ui, sans-serif; max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; line-height: 1.55; color: #1d1f23; background: #fff; }
-  a { color: #0b5cad; }
-  @media (prefers-color-scheme: dark) { body { color: #e6e8eb; background: #15171a; } a { color: #6fb3ff; } }
+  :root {
+    --bg: #f6f8f7; --card: #ffffff; --text: #1d1f23; --muted: #5b616b; --line: #dde3e0;
+    --green: #15803d; --yellow: #facc15; --link: #0b5cad;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121614; --card: #1a201d; --text: #e6e8eb; --muted: #a3a9b2; --line: #2b332f; --green: #4ade80; --link: #6fb3ff; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, sans-serif; line-height: 1.55; color: var(--text); background: var(--bg); }
+  main { max-width: 820px; margin: 0 auto; padding: 32px 16px 48px; }
+  a { color: var(--link); }
+  .lang { text-align: right; font-size: .9rem; }
+  header { display: flex; gap: 20px; align-items: center; margin: 12px 0 28px; }
+  header img { width: 96px; height: 96px; flex: none; }
+  h1 { font-size: 2.2rem; margin: 0; }
+  .tagline { font-size: 1.2rem; margin: 4px 0 0; color: var(--muted); }
+  .status { display: inline-block; margin-top: 10px; padding: 4px 12px; border-radius: 999px; background: var(--yellow); color: #1d1f23; font-weight: 600; font-size: .9rem; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; }
+  .card h2 { font-size: 1.05rem; margin: 0 0 8px; color: var(--green); }
+  .card ul { margin: 0; padding-left: 18px; }
+  .card li { margin: 4px 0; }
+  footer { border-top: 1px solid var(--line); margin-top: 32px; padding-top: 16px; color: var(--muted); font-size: .9rem; }
+  /* Português aparece com #pt no endereço; inglês é o padrão. */
+  #pt { display: none; }
+  #pt:target { display: block; }
+  #pt:target ~ #en { display: none; }
+  @media (max-width: 480px) { header { flex-direction: column; align-items: flex-start; } h1 { font-size: 1.8rem; } }
 </style>
 </head>
 <body>
-<h1>BamboLens</h1>
-<p><a href="privacy.html">Privacy Policy</a> · <a href="privacidade.html">Política de Privacidade</a></p>
+
+<main id="pt" lang="pt-BR">
+  <p class="lang"><a href="#en">English</a> · <strong>Português</strong></p>
+  <header>
+    <img src="icon.svg" alt="Ícone do BamboLens">
+    <div>
+      <h1>BamboLens</h1>
+      <p class="tagline">Veja suas peças 3D em tamanho real, na sua mesa, antes de imprimir.</p>
+      <span class="status">Em breve na Meta Horizon Store</span>
+    </div>
+  </header>
+  <p>Abra arquivos STL, 3MF ou ZIP e coloque a peça na sua mesa de verdade, em tamanho real, com o passthrough do Meta
+  Quest. Confira medidas, encaixe e cor de filamento antes de gastar material e tempo de impressão.</p>
+  <div class="grid">
+    <section class="card"><h2>Na sua mesa, em tamanho real</h2><ul>
+      <li>Aponte para a mesa e escolha onde a peça fica.</li>
+      <li>Gravidade e colisão: a peça assenta na face mais estável e pode ser empilhada.</li>
+      <li>Cotas em milímetros ao redor da peça.</li></ul></section>
+    <section class="card"><h2>Cores de filamento reais</h2><ul>
+      <li>Paleta de PLA, PLA fosco, PLA seda, PETG, ABS/ASA e TPU.</li>
+      <li>Arquivos 3MF multicoloridos abrem com as cores do projeto.</li></ul></section>
+    <section class="card"><h2>Seus arquivos, do jeito que vêm</h2><ul>
+      <li>STL, 3MF e pacotes ZIP com várias peças.</li>
+      <li>mm, cm, m ou polegadas; eixo Z para cima.</li>
+      <li>Modelos grandes simplificados automaticamente.</li></ul></section>
+    <section class="card"><h2>Portal de modelos</h2><ul>
+      <li>Navegue por sites de modelos 3D dentro do app e baixe o arquivo direto para a mesa, sem tirar o headset.</li></ul></section>
+    <section class="card"><h2>Privado por padrão</h2><ul>
+      <li>Sem conta, sem anúncios e sem coleta de dados: seus arquivos e o seu ambiente ficam no seu aparelho.</li>
+      <li><a href="privacidade">Política de Privacidade</a></li></ul></section>
+    <section class="card"><h2>Contato</h2><ul>
+      <li>Suporte: <a href="mailto:support@bambohouse.com">support@bambohouse.com</a></li>
+      <li>Privacidade e jurídico: <a href="mailto:legal@bambohouse.com">legal@bambohouse.com</a></li></ul></section>
+  </div>
+  <p>Para Meta Quest 3 e Quest 3S. Interface em 20 idiomas.</p>
+  <footer>
+    <p>O BamboLens não é afiliado a nenhum site de modelos 3D nem a fabricantes de filamento. As marcas citadas pertencem
+    aos seus donos. Meta e Meta Quest são marcas da Meta Platforms, Inc.</p>
+    <p>© 2026 Wesley Montoza Vilas Boas de Oliveira (BamboHouse). Todos os direitos reservados.</p>
+  </footer>
+</main>
+
+<main id="en">
+  <p class="lang"><strong>English</strong> · <a href="#pt">Português</a></p>
+  <header>
+    <img src="icon.svg" alt="BamboLens icon">
+    <div>
+      <h1>BamboLens</h1>
+      <p class="tagline">See your 3D prints at real size, on your desk, before you print.</p>
+      <span class="status">Coming soon to the Meta Horizon Store</span>
+    </div>
+  </header>
+  <p>Open STL, 3MF or ZIP files and place the part on your real desk, at real size, with Meta Quest passthrough. Check
+  dimensions, fit and filament color before spending material and print time.</p>
+  <div class="grid">
+    <section class="card"><h2>On your desk, at real size</h2><ul>
+      <li>Point at the desk and choose where the part goes.</li>
+      <li>Gravity and collision: parts settle on their most stable face and can be stacked.</li>
+      <li>Dimensions in millimeters around the part.</li></ul></section>
+    <section class="card"><h2>Real filament colors</h2><ul>
+      <li>A palette of PLA, matte PLA, silk PLA, PETG, ABS/ASA and TPU colors.</li>
+      <li>Multicolor 3MF files open with the project's colors.</li></ul></section>
+    <section class="card"><h2>Your files, as they come</h2><ul>
+      <li>STL, 3MF and ZIP packages with many parts.</li>
+      <li>mm, cm, m or inches; Z-up option.</li>
+      <li>Large models are simplified automatically.</li></ul></section>
+    <section class="card"><h2>Model portal</h2><ul>
+      <li>Browse 3D model websites inside the app and download a file straight to your desk, without taking off the headset.</li></ul></section>
+    <section class="card"><h2>Private by default</h2><ul>
+      <li>No account, no ads and no data collection: your files and your room stay on your device.</li>
+      <li><a href="privacy">Privacy Policy</a></li></ul></section>
+    <section class="card"><h2>Contact</h2><ul>
+      <li>Support: <a href="mailto:support@bambohouse.com">support@bambohouse.com</a></li>
+      <li>Privacy and legal: <a href="mailto:legal@bambohouse.com">legal@bambohouse.com</a></li></ul></section>
+  </div>
+  <p>For Meta Quest 3 and Quest 3S. Interface in 20 languages.</p>
+  <footer>
+    <p>BamboLens is not affiliated with any 3D model website or filament manufacturer. Trademarks belong to their
+    respective owners. Meta and Meta Quest are trademarks of Meta Platforms, Inc.</p>
+    <p>© 2026 Wesley Montoza Vilas Boas de Oliveira (BamboHouse). All rights reserved.</p>
+  </footer>
+</main>
+
 </body>
 </html>

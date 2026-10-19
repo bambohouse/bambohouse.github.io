@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <!-- Ícone do BamboLens: cubo (azul da bandeira) visto através de uma lente amarela, sobre verde.
+       Fonte dos PNG do site (icon-192, icon-512, icon-maskable-512) e do ícone do app do Quest
+       (quest/app/src/main/res/drawable/ic_launcher_*.xml). Grade de 108 do ícone adaptativo. -->
+  <defs>
+    <radialGradient id="bg" cx="0.35" cy="0.3" r="0.9"><stop offset="0" stop-color="#4ade80"/><stop offset="1" stop-color="#15803d"/></radialGradient>
+    <radialGradient id="glass" cx="0.5" cy="0.5" r="0.5"><stop offset="0.7" stop-color="#ffffff" stop-opacity="0.12"/><stop offset="1" stop-color="#ffffff" stop-opacity="0.32"/></radialGradient>
+    <clipPath id="lens"><circle cx="54" cy="54" r="35.6"/></clipPath>
+  </defs>
+  <rect width="108" height="108" rx="24" fill="url(#bg)"/>
+  <circle cx="54" cy="54" r="35.6" fill="url(#glass)"/>
+  <path d="M54 29.2 L75.7 41.6 L75.7 66.4 L54 78.8 L32.3 66.4 L32.3 41.6 Z" fill="#002776"/>
+  <path d="M32.3 41.6 L54 54 L75.7 41.6 M54 54 L54 78.8" fill="none" stroke="#ffffff" stroke-width="2.17" stroke-linecap="round" stroke-linejoin="round"/>
+  <g clip-path="url(#lens)">
+    <path d="M10 46 L46 10 L58 10 L10 58 Z" fill="#ffffff" fill-opacity="0.28"/>
+    <path d="M10 64 L64 10 L68 10 L10 68 Z" fill="#ffffff" fill-opacity="0.2"/>
+  </g>
+  <circle cx="38" cy="36" r="2.4" fill="#ffffff"/>
+  <circle cx="54" cy="54" r="38.1" fill="none" stroke="#facc15" stroke-width="5.1"/>
+  <path d="M27.33 28.6 A38.1 38.1 0 0 1 46.38 17.17" fill="none" stroke="#ffffff" stroke-width="5.1" stroke-linecap="round"/>
+</svg>
