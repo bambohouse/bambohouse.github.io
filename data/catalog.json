@@ -1,0 +1,252 @@
+{
+  "version": 1,
+  "updated": "2026-10-19",
+  "_rule": "Generic color = per-channel median (R, G, B) of the same color from Bambu Lab, Prusament, eSUN and Polymaker (official hex; eSUN measured).",
+  "_sources": {
+    "Bambu Lab": "https://github.com/bambulab/BambuStudio/blob/master/resources/profiles/BBL/filament/filaments_color_codes.json",
+    "Prusament": "https://help.prusa3d.com/article/hueforge-filament-transparency-values-and-hexcodes_762314",
+    "Polymaker": "https://wiki.polymaker.com/polymaker-wiki/polymaker-wiki-pt/produtos-polymaker/mais-sobre-nossos-produtos/codigos-hex-e-distancias-de-transmissao",
+    "eSUN": "https://filamentcolors.xyz/ (measured swatches; eSUN publishes no hex)"
+  },
+  "brands": [
+    {"id": "generic", "name": "", "generic": true, "sponsored": false, "url": null, "lines": [
+      {"id": "pla", "material": "PLA", "finish": "basic", "roughness": 0.6, "metallic": 0, "colors": [
+        {"id": "white", "hex": "E4EAEB", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Basic Jade White", "hex": "FFFFFF"},
+            {"brand": "Prusament", "name": "PLA Pristine White", "hex": "E6EAED"},
+            {"brand": "eSUN", "name": "PLA+ White", "hex": "E1E9E9"},
+            {"brand": "Polymaker", "name": "PolyLite PLA White", "hex": "DDD7D3"}
+        ]},
+        {"id": "black", "hex": "141618", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Basic Black", "hex": "000000"},
+            {"brand": "Prusament", "name": "PLA Jet Black", "hex": "24292A"},
+            {"brand": "eSUN", "name": "PLA+ Black", "hex": "373838"},
+            {"brand": "Polymaker", "name": "PolyLite PLA Black", "hex": "030305"}
+        ]},
+        {"id": "gray", "hex": "8D8F90", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Basic Gray", "hex": "8E9089"},
+            {"brand": "Prusament", "name": "PLA Gravity Grey", "hex": "9FA4A7"},
+            {"brand": "eSUN", "name": "PLA+ Gray", "hex": "697480"},
+            {"brand": "Polymaker", "name": "PolyLite PLA Grey", "hex": "8B8E96"}
+        ]},
+        {"id": "red", "hex": "CA2F25", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Basic Red", "hex": "C12E1F"},
+            {"brand": "Prusament", "name": "PLA Lipstick Red", "hex": "D03036"},
+            {"brand": "eSUN", "name": "PLA+ Red", "hex": "C4402A"},
+            {"brand": "Polymaker", "name": "PolyLite PLA Red", "hex": "D90102"}
+        ]},
+        {"id": "orange", "hex": "F96C22", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Basic Orange", "hex": "FF6A13"},
+            {"brand": "Prusament", "name": "PLA Prusa Orange", "hex": "FE6E31"},
+            {"brand": "eSUN", "name": "PLA+ Orange", "hex": "EF7749"},
+            {"brand": "Polymaker", "name": "PolyLite PLA Orange", "hex": "F36201"}
+        ]},
+        {"id": "yellow", "hex": "F4CF18", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Basic Yellow", "hex": "F4EE2A"},
+            {"brand": "Prusament", "name": "PLA Pineapple Yellow", "hex": "EFD006"},
+            {"brand": "eSUN", "name": "PLA+ Yellow", "hex": "FBCE2B"},
+            {"brand": "Polymaker", "name": "PolyLite PLA Yellow", "hex": "F3AA01"}
+        ]},
+        {"id": "green", "hex": "19A54D", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Basic Bambu Green", "hex": "00AE42"},
+            {"brand": "Prusament", "name": "PLA Simply Green", "hex": "70A640"},
+            {"brand": "eSUN", "name": "PLA+ Green", "hex": "015E58"},
+            {"brand": "Polymaker", "name": "PolyLite PLA Green", "hex": "30A45F"}
+        ]},
+        {"id": "blue", "hex": "053C8C", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Basic Blue", "hex": "0A2989"},
+            {"brand": "Prusament", "name": "PLA Blend Royal Blue", "hex": "04518E"},
+            {"brand": "eSUN", "name": "PLA+ Blue", "hex": "054795"},
+            {"brand": "Polymaker", "name": "PolyLite PLA Blue", "hex": "013178"}
+        ]},
+        {"id": "light_blue", "hex": "27A2D6", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Basic Cyan", "hex": "0086D6"},
+            {"brand": "Prusament", "name": "PLA Azure Blue", "hex": "0682AC"},
+            {"brand": "eSUN", "name": "PLA+ Light Blue", "hex": "48BFD5"},
+            {"brand": "Polymaker", "name": "PolyLite PLA Aqua Blue", "hex": "5EBDDB"}
+        ]},
+        {"id": "purple", "hex": "6447A5", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Basic Purple", "hex": "5E43B7"},
+            {"brand": "eSUN", "name": "PLA+ Purple", "hex": "8350A4"},
+            {"brand": "Polymaker", "name": "PolyLite PLA Purple", "hex": "6447A5"}
+        ]},
+        {"id": "pink", "hex": "EC6F95", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Basic Pink", "hex": "F55A74"},
+            {"brand": "Prusament", "name": "PLA Blend Ms. Pink", "hex": "E34A93"},
+            {"brand": "eSUN", "name": "PLA+ Pink", "hex": "E78397"},
+            {"brand": "Polymaker", "name": "PolyLite PLA Pink", "hex": "F1A1AF"}
+        ]},
+        {"id": "beige", "hex": "EACCB2", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Basic Beige", "hex": "F7E6DE"},
+            {"brand": "Prusament", "name": "PLA Noctua Beige", "hex": "E7CEB4"},
+            {"brand": "eSUN", "name": "PLA+ Beige", "hex": "ECCAB0"},
+            {"brand": "Polymaker", "name": "PolyLite PLA Beige", "hex": "C2AB72"}
+        ]}
+      ]},
+      {"id": "pla_matte", "material": "PLA", "finish": "matte", "roughness": 0.92, "metallic": 0, "colors": [
+        {"id": "white", "hex": "FAF7F5", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Matte Ivory White", "hex": "FFFFFF"},
+            {"brand": "Polymaker", "name": "Panchroma Matte Cotton White", "hex": "F4EFEB"}
+        ]},
+        {"id": "black", "hex": "181718", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Matte Charcoal", "hex": "000000"},
+            {"brand": "Polymaker", "name": "Panchroma Matte Charcoal Black", "hex": "2F2E30"}
+        ]},
+        {"id": "gray", "hex": "93959A", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Matte Ash Gray", "hex": "9B9EA0"},
+            {"brand": "Polymaker", "name": "Panchroma Matte Fossil Grey", "hex": "8A8C94"}
+        ]},
+        {"id": "beige", "hex": "E2CBAE", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Matte Desert Tan", "hex": "E8DBB7"},
+            {"brand": "Polymaker", "name": "Panchroma Matte Army Beige", "hex": "DBBAA5"}
+        ]},
+        {"id": "red", "hex": "E63939", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Matte Scarlet Red", "hex": "DE4343"},
+            {"brand": "Polymaker", "name": "Panchroma Matte Lava Red", "hex": "ED2F2E"}
+        ]},
+        {"id": "green", "hex": "61BA78", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Matte Grass Green", "hex": "61C680"},
+            {"brand": "Polymaker", "name": "Panchroma Matte Forest Green", "hex": "60AD70"}
+        ]},
+        {"id": "blue", "hex": "016EB3", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Matte Marine Blue", "hex": "0078BF"},
+            {"brand": "Polymaker", "name": "Panchroma Matte Sapphire Blue", "hex": "0163A6"}
+        ]}
+      ]},
+      {"id": "pla_silk", "material": "PLA", "finish": "silk", "roughness": 0.3, "metallic": 0.45, "colors": [
+        {"id": "gold", "hex": "C9972E", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Silk Gold", "hex": "E5B03D"},
+            {"brand": "Prusament", "name": "PLA Blend Oh My Gold", "hex": "CE9F2D"},
+            {"brand": "eSUN", "name": "Silk PLA Gold", "hex": "C48E2F"},
+            {"brand": "Polymaker", "name": "PolyLite PLA Silk Gold", "hex": "BE8217"}
+        ]},
+        {"id": "silver", "hex": "B2BDC3", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Silk Silver", "hex": "EAECEB"},
+            {"brand": "Prusament", "name": "PLA Blend My Silverness", "hex": "AEB8C0"},
+            {"brand": "eSUN", "name": "Silk PLA Silver", "hex": "B5C1C5"},
+            {"brand": "Polymaker", "name": "PolyLite PLA Silk Silver", "hex": "979FAF"}
+        ]},
+        {"id": "copper", "hex": "865B36", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Silk Copper", "hex": "5E4B3C"},
+            {"brand": "eSUN", "name": "Silk PLA Copper", "hex": "AE6B2F"}
+        ]},
+        {"id": "blue", "hex": "1A75BD", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Silk Blue", "hex": "147BD1"},
+            {"brand": "eSUN", "name": "Silk PLA Blue", "hex": "2275AA"},
+            {"brand": "Polymaker", "name": "PolyLite PLA Silk Blue", "hex": "1A72BD"}
+        ]},
+        {"id": "red", "hex": "D03627", "sources": [
+            {"brand": "Bambu Lab", "name": "PLA Silk+ Candy Red", "hex": "D02727"},
+            {"brand": "eSUN", "name": "Silk PLA Red", "hex": "C94830"},
+            {"brand": "Polymaker", "name": "PolyLite PLA Silk Red", "hex": "D1361D"}
+        ]}
+      ]},
+      {"id": "petg", "material": "PETG", "finish": "basic", "roughness": 0.35, "metallic": 0, "colors": [
+        {"id": "white", "hex": "F1EEEE", "sources": [
+            {"brand": "Bambu Lab", "name": "PETG HF White", "hex": "FFFFFF"},
+            {"brand": "Prusament", "name": "PETG Signal White", "hex": "E5E0E1"},
+            {"brand": "eSUN", "name": "PETG Solid White", "hex": "F4F1F1"},
+            {"brand": "Polymaker", "name": "PolyLite PETG White", "hex": "EEEBEA"}
+        ]},
+        {"id": "black", "hex": "202122", "sources": [
+            {"brand": "Bambu Lab", "name": "PETG HF Black", "hex": "000000"},
+            {"brand": "Prusament", "name": "PETG Jet Black", "hex": "292B2B"},
+            {"brand": "eSUN", "name": "PETG Black", "hex": "353434"},
+            {"brand": "Polymaker", "name": "PolyLite PETG Black", "hex": "161618"}
+        ]},
+        {"id": "gray", "hex": "959093", "sources": [
+            {"brand": "Bambu Lab", "name": "PETG HF Gray", "hex": "ADB1B2"},
+            {"brand": "Prusament", "name": "PETG Urban Grey", "hex": "95908C"},
+            {"brand": "Polymaker", "name": "PolyLite PETG Grey", "hex": "8C8D93"}
+        ]},
+        {"id": "red", "hex": "BC2B1C", "sources": [
+            {"brand": "Bambu Lab", "name": "PETG HF Red", "hex": "BC0900"},
+            {"brand": "Prusament", "name": "PETG Lipstick Red", "hex": "BB2E32"},
+            {"brand": "Polymaker", "name": "PolyLite PETG Red", "hex": "D92B1C"}
+        ]},
+        {"id": "orange", "hex": "F35403", "sources": [
+            {"brand": "Bambu Lab", "name": "PETG HF Orange", "hex": "F75403"},
+            {"brand": "Prusament", "name": "PETG Prusa Orange", "hex": "EB5403"},
+            {"brand": "Polymaker", "name": "PolyLite PETG Orange", "hex": "F37715"}
+        ]},
+        {"id": "blue", "hex": "013196", "sources": [
+            {"brand": "Bambu Lab", "name": "PETG HF Blue", "hex": "002E96"},
+            {"brand": "eSUN", "name": "PETG-HS Solid Blue", "hex": "1A6FB4"},
+            {"brand": "Polymaker", "name": "PolyLite PETG Blue", "hex": "013178"}
+        ]},
+        {"id": "green", "hex": "008246", "sources": [
+            {"brand": "Bambu Lab", "name": "PETG HF Green", "hex": "00AE42"},
+            {"brand": "Prusament", "name": "PETG Jungle Green", "hex": "007248"},
+            {"brand": "eSUN", "name": "PETG Solid Green", "hex": "008A58"},
+            {"brand": "Polymaker", "name": "PolyLite PETG Green", "hex": "007A44"}
+        ]},
+        {"id": "clear", "hex": "E0DEDD", "translucent": true, "sources": [
+            {"brand": "Prusament", "name": "PETG Clear", "hex": "E4E7E3"},
+            {"brand": "Polymaker", "name": "PolyLite PETG Clear", "hex": "DBD5D6"}
+        ]},
+        {"id": "blue_translucent", "hex": "2B3B60", "translucent": true, "sources": [
+            {"brand": "Bambu Lab", "name": "PETG Translucent Light Blue", "hex": "61B0FF"},
+            {"brand": "Prusament", "name": "PETG Ultramarine Blue Transparent", "hex": "2B3B60"},
+            {"brand": "Polymaker", "name": "PolyLite PETG Translucent Blue", "hex": "01062F"}
+        ]}
+      ]},
+      {"id": "abs_asa", "material": "ABS/ASA", "finish": "basic", "roughness": 0.7, "metallic": 0, "colors": [
+        {"id": "white", "hex": "EAE7E4", "sources": [
+            {"brand": "Bambu Lab", "name": "ABS White", "hex": "FFFFFF"},
+            {"brand": "Prusament", "name": "ASA Signal White", "hex": "E3DFD7"},
+            {"brand": "eSUN", "name": "ABS White", "hex": "E1E2E0"},
+            {"brand": "Polymaker", "name": "PolyLite ABS White", "hex": "F0EBE8"}
+        ]},
+        {"id": "black", "hex": "201F1F", "sources": [
+            {"brand": "Bambu Lab", "name": "ABS Black", "hex": "000000"},
+            {"brand": "Prusament", "name": "ASA Jet Black", "hex": "292824"},
+            {"brand": "eSUN", "name": "ABS Black", "hex": "3F3A3F"},
+            {"brand": "Polymaker", "name": "PolyLite ABS Black", "hex": "16161A"}
+        ]},
+        {"id": "gray", "hex": "8A8D93", "sources": [
+            {"brand": "Bambu Lab", "name": "ASA Gray", "hex": "8A949E"},
+            {"brand": "eSUN", "name": "ABS+ Gray", "hex": "616777"},
+            {"brand": "Polymaker", "name": "PolyLite ABS Grey", "hex": "8C8D93"}
+        ]},
+        {"id": "red", "hex": "D23937", "sources": [
+            {"brand": "Bambu Lab", "name": "ABS Red", "hex": "D32941"},
+            {"brand": "Prusament", "name": "ASA Lipstick Red", "hex": "D03036"},
+            {"brand": "eSUN", "name": "ABS Red", "hex": "A74237"},
+            {"brand": "Polymaker", "name": "PolyLite ABS Red", "hex": "F3442B"}
+        ]},
+        {"id": "blue", "hex": "0A3276", "sources": [
+            {"brand": "Bambu Lab", "name": "ABS Blue", "hex": "0A2CA5"},
+            {"brand": "Prusament", "name": "ASA Sapphire Blue", "hex": "3B4467"},
+            {"brand": "Polymaker", "name": "PolyLite ABS Blue", "hex": "003276"}
+        ]},
+        {"id": "yellow", "hex": "EDBC00", "sources": [
+            {"brand": "Bambu Lab", "name": "ABS Yellow", "hex": "FCE900"},
+            {"brand": "eSUN", "name": "ABS+ Yellow", "hex": "D3BC0F"},
+            {"brand": "Polymaker", "name": "PolyLite ABS Yellow", "hex": "EDA900"}
+        ]}
+      ]},
+      {"id": "tpu", "material": "TPU", "finish": "basic", "roughness": 0.65, "metallic": 0, "colors": [
+        {"id": "black", "hex": "161820", "sources": [
+            {"brand": "Bambu Lab", "name": "TPU 95A HF Black", "hex": "101820"},
+            {"brand": "Prusament", "name": "TPU 95A Jet Black", "hex": "232323"},
+            {"brand": "Polymaker", "name": "PolyFlex TPU95 Black", "hex": "16161A"}
+        ]},
+        {"id": "white", "hex": "F8F5F4", "sources": [
+            {"brand": "Bambu Lab", "name": "TPU 95A HF White", "hex": "FFFFFF"},
+            {"brand": "Polymaker", "name": "PolyFlex TPU95 White", "hex": "F0EBE8"}
+        ]},
+        {"id": "red", "hex": "DE2A2D", "sources": [
+            {"brand": "Bambu Lab", "name": "TPU 95A HF Red", "hex": "C8102E"},
+            {"brand": "Polymaker", "name": "PolyFlex TPU95 Red", "hex": "F3442B"}
+        ]},
+        {"id": "blue", "hex": "1A7FCB", "sources": [
+            {"brand": "Bambu Lab", "name": "TPU 95A HF Blue", "hex": "0072CE"},
+            {"brand": "Polymaker", "name": "PolyFlex TPU95 Blue", "hex": "338CC7"}
+        ]},
+        {"id": "clear", "hex": "F9F3E5", "translucent": true, "sources": [
+            {"brand": "Prusament", "name": "TPU 95A Natural", "hex": "F9F3E5"}
+        ]}
+      ]}
+    ]}
+  ]
+}
