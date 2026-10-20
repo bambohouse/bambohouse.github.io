@@ -1,0 +1,137 @@
+<!-- Copyright (c) 2026 Wesley Montoza Vilas Boas de Oliveira. All rights reserved.
+     Proprietary and confidential: see LICENSE in the project root. Contact: legal@bambohouse.com -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BamboLens · Models</title>
+<meta name="description" content="Free 3D models by the BamboLens developer, ready to preview at real size in BamboLens and to print.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<style>
+  :root {
+    --bg: #f6f8f7; --card: #ffffff; --text: #1d1f23; --muted: #5b616b; --line: #dde3e0;
+    --green: #15803d; --yellow: #facc15; --link: #0b5cad; --thumb: #eef2f0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121614; --card: #1a201d; --text: #e6e8eb; --muted: #a3a9b2; --line: #2b332f; --green: #4ade80; --link: #6fb3ff; --thumb: #222a26; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, sans-serif; font-size: 18px; line-height: 1.5; color: var(--text); background: var(--bg); }
+  main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 48px; }
+  a { color: var(--link); }
+  .lang { text-align: right; font-size: .9rem; }
+  header { display: flex; gap: 18px; align-items: center; margin: 8px 0 20px; }
+  header img { width: 72px; height: 72px; flex: none; }
+  h1 { font-size: 2rem; margin: 0; }
+  .tagline { margin: 2px 0 0; color: var(--muted); }
+  .how { background: var(--card); border: 1px solid var(--line); border-left: 6px solid var(--yellow); border-radius: 12px; padding: 12px 16px; margin: 0 0 20px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .card { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .card img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: var(--thumb); }
+  .card .body { display: flex; flex-direction: column; flex: 1; padding: 12px 16px 16px; }
+  .card h2 { font-size: 1.15rem; margin: 0 0 4px; }
+  .card p { margin: 0 0 12px; color: var(--muted); font-size: .95rem; }
+  .dl { margin-top: auto; display: block; text-align: center; padding: 14px; border-radius: 12px; background: var(--green); color: #fff; font-weight: 700; text-decoration: none; font-size: 1.05rem; }
+  @media (prefers-color-scheme: dark) { .dl { color: #0d1a12; } }
+  .license { margin-top: 28px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; font-size: .95rem; }
+  .license h2 { font-size: 1.05rem; margin: 0 0 6px; color: var(--green); }
+  footer { border-top: 1px solid var(--line); margin-top: 28px; padding-top: 14px; color: var(--muted); font-size: .9rem; }
+  /* Português aparece com #pt no endereço; inglês é o padrão. */
+  #pt { display: none; }
+  #pt:target { display: block; }
+  #pt:target ~ #en { display: none; }
+</style>
+</head>
+<body>
+
+<main id="pt" lang="pt-BR">
+  <p class="lang"><a href="#en">English</a> · <strong>Português</strong></p>
+  <header>
+    <a href="./#pt"><img src="icon.svg" alt="Ícone do BamboLens"></a>
+    <div>
+      <h1>Modelos do BamboLens</h1>
+      <p class="tagline">Modelos 3D grátis, feitos pelo criador do BamboLens.</p>
+    </div>
+  </header>
+  <p class="how">No portal do BamboLens, toque em <strong>Baixar</strong>: a peça vai direto para a sua mesa, em tamanho real.</p>
+  <div class="grid">
+    <section class="card"><img src="img/models/dog-paw-doorstop.webp" alt="Calço de porta – pata de cachorro" loading="lazy"><div class="body">
+      <h2>Calço de porta – pata de cachorro</h2><p>34 × 93 × 12 mm · STL</p>
+      <a class="dl" href="downloads/dog-paw-doorstop.stl" download>Baixar</a></div></section>
+    <section class="card"><img src="img/models/cat-paw-doorstop.webp" alt="Calço de porta – pata de gato" loading="lazy"><div class="body">
+      <h2>Calço de porta – pata de gato</h2><p>48 × 98 × 12 mm · STL</p>
+      <a class="dl" href="downloads/cat-paw-doorstop.stl" download>Baixar</a></div></section>
+    <section class="card"><img src="img/models/pen-stand.webp" alt="Porta-caneta" loading="lazy"><div class="body">
+      <h2>Porta-caneta</h2><p>60 × 60 × 101 mm · STL</p>
+      <a class="dl" href="downloads/pen-stand.stl" download>Baixar</a></div></section>
+    <section class="card"><img src="img/models/egg-cup.webp" alt="Porta-ovo" loading="lazy"><div class="body">
+      <h2>Porta-ovo</h2><p>50 × 50 × 68 mm · STL</p>
+      <a class="dl" href="downloads/egg-cup.stl" download>Baixar</a></div></section>
+    <section class="card"><img src="img/models/book-tablet-stand.webp" alt="Suporte para livro e tablet" loading="lazy"><div class="body">
+      <h2>Suporte para livro e tablet</h2><p>155 × 93 × 126 mm · STL</p>
+      <a class="dl" href="downloads/book-tablet-stand.stl" download>Baixar</a></div></section>
+    <section class="card"><img src="img/models/headphone-stand.webp" alt="Suporte para fones de ouvido" loading="lazy"><div class="body">
+      <h2>Suporte para fones de ouvido</h2><p>2 peças + pino · 27 cm de altura montado · feito para impressoras pequenas (140 mm) · ZIP</p>
+      <a class="dl" href="downloads/headphone-stand.zip" download>Baixar</a></div></section>
+    <section class="card"><img src="img/models/door-clamp.webp" alt="Trava de porta" loading="lazy"><div class="body">
+      <h2>Trava de porta</h2><p>2 peças · 40 × 60 × 20 mm cada · ZIP</p>
+      <a class="dl" href="downloads/door-clamp.zip" download>Baixar</a></div></section>
+  </div>
+  <section class="license">
+    <h2>Licença: uso pessoal, grátis</h2>
+    <p>Você pode baixar e imprimir estes modelos para uso próprio, à vontade. Vender os arquivos ou as peças impressas,
+    ou publicar os arquivos em outro lugar, exige autorização por escrito do autor: <a href="mailto:legal@bambohouse.com">legal@bambohouse.com</a>.</p>
+  </section>
+  <footer>
+    <p><a href="./#pt">BamboLens</a> · <a href="privacidade">Política de Privacidade</a></p>
+    <p>© 2020–2026 Wesley Montoza Vilas Boas de Oliveira (BamboHouse). Todos os direitos reservados.</p>
+  </footer>
+</main>
+
+<main id="en">
+  <p class="lang"><strong>English</strong> · <a href="#pt">Português</a></p>
+  <header>
+    <a href="./"><img src="icon.svg" alt="BamboLens icon"></a>
+    <div>
+      <h1>BamboLens Models</h1>
+      <p class="tagline">Free 3D models by the creator of BamboLens.</p>
+    </div>
+  </header>
+  <p class="how">In the BamboLens portal, tap <strong>Download</strong>: the part goes straight to your desk, at real size.</p>
+  <div class="grid">
+    <section class="card"><img src="img/models/dog-paw-doorstop.webp" alt="Doorstop – dog paw" loading="lazy"><div class="body">
+      <h2>Doorstop – dog paw</h2><p>34 × 93 × 12 mm · STL</p>
+      <a class="dl" href="downloads/dog-paw-doorstop.stl" download>Download</a></div></section>
+    <section class="card"><img src="img/models/cat-paw-doorstop.webp" alt="Doorstop – cat paw" loading="lazy"><div class="body">
+      <h2>Doorstop – cat paw</h2><p>48 × 98 × 12 mm · STL</p>
+      <a class="dl" href="downloads/cat-paw-doorstop.stl" download>Download</a></div></section>
+    <section class="card"><img src="img/models/pen-stand.webp" alt="Pen stand" loading="lazy"><div class="body">
+      <h2>Pen stand</h2><p>60 × 60 × 101 mm · STL</p>
+      <a class="dl" href="downloads/pen-stand.stl" download>Download</a></div></section>
+    <section class="card"><img src="img/models/egg-cup.webp" alt="Egg cup" loading="lazy"><div class="body">
+      <h2>Egg cup</h2><p>50 × 50 × 68 mm · STL</p>
+      <a class="dl" href="downloads/egg-cup.stl" download>Download</a></div></section>
+    <section class="card"><img src="img/models/book-tablet-stand.webp" alt="Book and tablet stand" loading="lazy"><div class="body">
+      <h2>Book and tablet stand</h2><p>155 × 93 × 126 mm · STL</p>
+      <a class="dl" href="downloads/book-tablet-stand.stl" download>Download</a></div></section>
+    <section class="card"><img src="img/models/headphone-stand.webp" alt="Headphone stand" loading="lazy"><div class="body">
+      <h2>Headphone stand</h2><p>2 parts + pin · 27 cm tall assembled · made for small printers (140 mm) · ZIP</p>
+      <a class="dl" href="downloads/headphone-stand.zip" download>Download</a></div></section>
+    <section class="card"><img src="img/models/door-clamp.webp" alt="Door clamp" loading="lazy"><div class="body">
+      <h2>Door clamp</h2><p>2 parts · 40 × 60 × 20 mm each · ZIP</p>
+      <a class="dl" href="downloads/door-clamp.zip" download>Download</a></div></section>
+  </div>
+  <section class="license">
+    <h2>License: free for personal use</h2>
+    <p>You may download and print these models for your own use, as much as you like. Selling the files or the printed
+    parts, or publishing the files elsewhere, requires the author's written permission: <a href="mailto:legal@bambohouse.com">legal@bambohouse.com</a>.</p>
+  </section>
+  <footer>
+    <p><a href="./">BamboLens</a> · <a href="privacy">Privacy Policy</a></p>
+    <p>© 2020–2026 Wesley Montoza Vilas Boas de Oliveira (BamboHouse). All rights reserved.</p>
+  </footer>
+</main>
+
+</body>
+</html>
