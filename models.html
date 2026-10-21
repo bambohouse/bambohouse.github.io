@@ -41,7 +41,13 @@
   #pt { display: none; }
   #pt:target { display: block; }
   #pt:target ~ #en { display: none; }
+  /* Sem #pt nem #en no endereço, navegador em português (classe "pt", posta pelo script abaixo) abre em português. */
+  html.pt:not(:has(#en:target)) #pt { display: block; }
+  html.pt:not(:has(#en:target)) #en { display: none; }
 </style>
+<script>
+  if (!location.hash && /^pt/i.test((navigator.languages && navigator.languages[0]) || navigator.language || "")) document.documentElement.classList.add("pt");
+</script>
 </head>
 <body>
 
