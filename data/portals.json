@@ -1,9 +1,10 @@
 {
-  "version": 2,
-  "updated": "2026-10-21",
+  "version": 3,
+  "updated": "2026-10-22",
   "_rule": "Portal shortcuts, in order; the first one is the home page. To change the list without a new app release, edit https://bambolens.com/data/portals.json and raise its version (the app uses the downloaded copy only if its version is >= this one).",
   "sites": [
     {"name": "BamboLens", "url": "https://bambolens.com/models"},
-    {"name": "Cults3D", "url": "https://cults3d.com/"}
+    {"name": "Cults3D", "url": "https://cults3d.com/"},
+    {"name": "Thingiverse", "url": "https://www.thingiverse.com/"}
   ]
 }
