@@ -25,12 +25,20 @@
   header img { width: 96px; height: 96px; flex: none; }
   h1 { font-size: 2.2rem; margin: 0; }
   .tagline { font-size: 1.2rem; margin: 4px 0 0; color: var(--muted); }
-  .status { display: inline-block; margin-top: 10px; padding: 4px 12px; border-radius: 999px; background: var(--yellow); color: #1d1f23; font-weight: 600; font-size: .9rem; }
+  .store { display: inline-block; margin-top: 12px; padding: 8px 18px; border-radius: 999px; background: var(--green); color: #fff; font-weight: 600; text-decoration: none; }
+  .store:hover { filter: brightness(1.1); }
+  @media (prefers-color-scheme: dark) { .store { color: #0d1a12; } }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 24px 0; }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; }
   .card h2 { font-size: 1.05rem; margin: 0 0 8px; color: var(--green); }
   .card ul { margin: 0; padding-left: 18px; }
   .card li { margin: 4px 0; }
+  .shots { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 20px 0 8px; }
+  .shots figure { margin: 0; }
+  .shots figure:first-child { grid-column: 1 / -1; }
+  .shots img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 12px; border: 1px solid var(--line); }
+  .shots figcaption { font-size: .85rem; color: var(--muted); margin-top: 4px; }
+  @media (max-width: 480px) { .shots { grid-template-columns: 1fr; } }
   footer { border-top: 1px solid var(--line); margin-top: 32px; padding-top: 16px; color: var(--muted); font-size: .9rem; }
   /* Português aparece com #pt no endereço; inglês é o padrão. */
   #pt { display: none; }
@@ -54,11 +62,18 @@
     <div>
       <h1>BamboLens</h1>
       <p class="tagline">Veja suas peças 3D em tamanho real, na sua mesa, antes de imprimir.</p>
-      <span class="status">Em breve na Meta Horizon Store</span>
+      <a class="store" href="https://www.meta.com/experiences/1455640150956913/">Disponível na Meta Horizon Store</a>
     </div>
   </header>
   <p>Abra arquivos STL, 3MF ou ZIP e coloque a peça na sua mesa de verdade, em tamanho real, com o passthrough do Meta
   Quest. Confira medidas, encaixe e cor de filamento antes de gastar material e tempo de impressão.</p>
+  <div class="shots">
+    <figure><img src="img/app/hand.webp" width="1280" height="720" alt="Peça impressa na mão ao lado do modelo 3D em tamanho real na mesa"><figcaption>A peça impressa ao lado do modelo, em tamanho real.</figcaption></figure>
+    <figure><img src="img/app/portal.webp" width="1280" height="720" loading="lazy" alt="Portal de modelos dentro do app"><figcaption>Baixe modelos sem tirar o headset.</figcaption></figure>
+    <figure><img src="img/app/place.webp" width="1280" height="720" loading="lazy" alt="Escolhendo o lugar da peça na mesa"><figcaption>Aponte para a mesa e escolha o lugar.</figcaption></figure>
+    <figure><img src="img/app/colors.webp" width="1280" height="720" loading="lazy" alt="Paleta de cores de filamento"><figcaption>Cores de filamento reais.</figcaption></figure>
+    <figure><img src="img/app/desk.webp" width="1280" height="720" loading="lazy" alt="Várias peças sobre a mesa"><figcaption>Várias peças na mesa, com gravidade e colisão.</figcaption></figure>
+  </div>
   <div class="grid">
     <section class="card"><h2>Na sua mesa, em tamanho real</h2><ul>
       <li>Aponte para a mesa e escolha onde a peça fica.</li>
@@ -67,8 +82,12 @@
     <section class="card"><h2>Cores de filamento reais</h2><ul>
       <li>Paleta de PLA, PLA fosco, PLA seda, PETG, ABS/ASA e TPU.</li>
       <li>Arquivos 3MF multicoloridos abrem com as cores do projeto.</li></ul></section>
+    <section class="card"><h2>Antes de imprimir</h2><ul>
+      <li>Volume e filamento estimado no material da cor escolhida.</li>
+      <li>Diz se a peça cabe na sua impressora, entre as mais vendidas.</li></ul></section>
     <section class="card"><h2>Seus arquivos, do jeito que vêm</h2><ul>
       <li>STL, 3MF e pacotes ZIP com várias peças.</li>
+      <li>Abra direto de outros apps do Quest com "Abrir com" ou "Compartilhar".</li>
       <li>mm, cm ou polegadas; eixo Z para cima.</li>
       <li>Modelos grandes simplificados automaticamente.</li></ul></section>
     <section class="card"><h2>Portal de modelos</h2><ul>
@@ -96,11 +115,18 @@
     <div>
       <h1>BamboLens</h1>
       <p class="tagline">See your 3D prints at real size, on your desk, before you print.</p>
-      <span class="status">Coming soon to the Meta Horizon Store</span>
+      <a class="store" href="https://www.meta.com/experiences/1455640150956913/">Available on the Meta Horizon Store</a>
     </div>
   </header>
   <p>Open STL, 3MF or ZIP files and place the part on your real desk, at real size, with Meta Quest passthrough. Check
   dimensions, fit and filament color before spending material and print time.</p>
+  <div class="shots">
+    <figure><img src="img/app/hand.webp" width="1280" height="720" alt="Printed part in hand next to the real-size 3D model on the desk"><figcaption>The printed part next to the model, at real size.</figcaption></figure>
+    <figure><img src="img/app/portal.webp" width="1280" height="720" loading="lazy" alt="Model portal inside the app"><figcaption>Download models without taking off the headset.</figcaption></figure>
+    <figure><img src="img/app/place.webp" width="1280" height="720" loading="lazy" alt="Choosing where the part goes on the desk"><figcaption>Point at the desk and choose the spot.</figcaption></figure>
+    <figure><img src="img/app/colors.webp" width="1280" height="720" loading="lazy" alt="Filament color palette"><figcaption>Real filament colors.</figcaption></figure>
+    <figure><img src="img/app/desk.webp" width="1280" height="720" loading="lazy" alt="Several parts on the desk"><figcaption>Several parts on the desk, with gravity and collision.</figcaption></figure>
+  </div>
   <div class="grid">
     <section class="card"><h2>On your desk, at real size</h2><ul>
       <li>Point at the desk and choose where the part goes.</li>
@@ -109,8 +135,12 @@
     <section class="card"><h2>Real filament colors</h2><ul>
       <li>A palette of PLA, matte PLA, silk PLA, PETG, ABS/ASA and TPU colors.</li>
       <li>Multicolor 3MF files open with the project's colors.</li></ul></section>
+    <section class="card"><h2>Before you print</h2><ul>
+      <li>Volume and estimated filament in the material of the chosen color.</li>
+      <li>Tells you whether the part fits your printer, among the best-selling models.</li></ul></section>
     <section class="card"><h2>Your files, as they come</h2><ul>
       <li>STL, 3MF and ZIP packages with many parts.</li>
+      <li>Open them straight from other Quest apps with "Open with" or "Share".</li>
       <li>mm, cm or inches; Z-up option.</li>
       <li>Large models are simplified automatically.</li></ul></section>
     <section class="card"><h2>Model portal</h2><ul>
