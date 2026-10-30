@@ -37,22 +37,28 @@
   .license { margin-top: 28px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; font-size: .95rem; }
   .license h2 { font-size: 1.05rem; margin: 0 0 6px; color: var(--green); }
   footer { border-top: 1px solid var(--line); margin-top: 28px; padding-top: 14px; color: var(--muted); font-size: .9rem; }
-  /* Português aparece com #pt no endereço; inglês é o padrão. */
-  #pt { display: none; }
-  #pt:target { display: block; }
-  #pt:target ~ #en { display: none; }
-  /* Sem #pt nem #en no endereço, navegador em português (classe "pt", posta pelo script abaixo) abre em português. */
-  html.pt:not(:has(#en:target)) #pt { display: block; }
-  html.pt:not(:has(#en:target)) #en { display: none; }
+  /* Inglês é o padrão. Os outros idiomas aparecem com #pt, #es, #de ou #fr no endereço. */
+  main.alt { display: none; }
+  main.alt:target { display: block; }
+  body:has(main.alt:target) #en { display: none; }
+  /* Sem idioma no endereço, o navegador em pt, es, de ou fr (data-lang, posto pelo script abaixo) abre nesse idioma. */
+  html[data-lang="pt"]:not(:has(main:target)) #pt,
+  html[data-lang="es"]:not(:has(main:target)) #es,
+  html[data-lang="de"]:not(:has(main:target)) #de,
+  html[data-lang="fr"]:not(:has(main:target)) #fr { display: block; }
+  html[data-lang]:not(:has(main:target)) #en { display: none; }
 </style>
 <script>
-  if (!location.hash && /^pt/i.test((navigator.languages && navigator.languages[0]) || navigator.language || "")) document.documentElement.classList.add("pt");
+  (function () {
+    var l = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
+    if (!location.hash && ["pt", "es", "de", "fr"].indexOf(l) >= 0) document.documentElement.setAttribute("data-lang", l);
+  })();
 </script>
 </head>
 <body>
 
-<main id="pt" lang="pt-BR">
-  <p class="lang"><a href="#en">English</a> · <strong>Português</strong></p>
+<main id="pt" class="alt" lang="pt-BR">
+  <p class="lang"><a href="#en">English</a> · <strong>Português</strong> · <a href="#es">Español</a> · <a href="#de">Deutsch</a> · <a href="#fr">Français</a></p>
   <header>
     <a href="./#pt"><img src="icon.svg" alt="Ícone do BamboLens"></a>
     <div>
@@ -95,8 +101,137 @@
   </footer>
 </main>
 
+<main id="es" class="alt" lang="es">
+  <p class="lang"><a href="#en">English</a> · <a href="#pt">Português</a> · <strong>Español</strong> · <a href="#de">Deutsch</a> · <a href="#fr">Français</a></p>
+  <header>
+    <a href="./#es"><img src="icon.svg" alt="Icono de BamboLens"></a>
+    <div>
+      <h1>Modelos de BamboLens</h1>
+      <p class="tagline">Modelos 3D gratis, hechos por el creador de BamboLens.</p>
+    </div>
+  </header>
+  <p class="how">En el portal de BamboLens, toca <strong>Descargar</strong>: la pieza va directamente a tu mesa, a tamaño real.</p>
+  <div class="grid">
+    <section class="card"><img src="img/models/dog-paw-doorstop.webp" alt="Tope de puerta – pata de perro" loading="lazy"><div class="body">
+      <h2>Tope de puerta – pata de perro</h2><p>34 × 93 × 12 mm · STL</p>
+      <a class="dl" href="downloads/dog-paw-doorstop.stl" download>Descargar</a></div></section>
+    <section class="card"><img src="img/models/cat-paw-doorstop.webp" alt="Tope de puerta – pata de gato" loading="lazy"><div class="body">
+      <h2>Tope de puerta – pata de gato</h2><p>48 × 98 × 12 mm · STL</p>
+      <a class="dl" href="downloads/cat-paw-doorstop.stl" download>Descargar</a></div></section>
+    <section class="card"><img src="img/models/pen-stand.webp" alt="Portalápices" loading="lazy"><div class="body">
+      <h2>Portalápices</h2><p>60 × 60 × 101 mm · STL</p>
+      <a class="dl" href="downloads/pen-stand.stl" download>Descargar</a></div></section>
+    <section class="card"><img src="img/models/egg-cup.webp" alt="Huevera" loading="lazy"><div class="body">
+      <h2>Huevera</h2><p>50 × 50 × 68 mm · STL</p>
+      <a class="dl" href="downloads/egg-cup.stl" download>Descargar</a></div></section>
+    <section class="card"><img src="img/models/book-tablet-stand.webp" alt="Soporte para libro y tableta" loading="lazy"><div class="body">
+      <h2>Soporte para libro y tableta</h2><p>155 × 93 × 126 mm · STL</p>
+      <a class="dl" href="downloads/book-tablet-stand.stl" download>Descargar</a></div></section>
+    <section class="card"><img src="img/models/headphone-stand.webp" alt="Soporte para auriculares" loading="lazy"><div class="body">
+      <h2>Soporte para auriculares</h2><p>2 piezas + pasador · 27 cm de alto montado · hecho para impresoras pequeñas (140 mm) · ZIP</p>
+      <a class="dl" href="downloads/headphone-stand.zip" download>Descargar</a></div></section>
+    <section class="card"><img src="img/models/door-clamp.webp" alt="Traba de puerta" loading="lazy"><div class="body">
+      <h2>Traba de puerta</h2><p>2 piezas · 40 × 60 × 20 mm cada una · ZIP</p>
+      <a class="dl" href="downloads/door-clamp.zip" download>Descargar</a></div></section>
+  </div>
+  <section class="license">
+    <h2>Licencia: uso personal, gratis</h2>
+    <p>Puedes descargar e imprimir estos modelos para tu propio uso, todas las veces que quieras. Vender los archivos o las piezas impresas, o publicar los archivos en otro lugar, requiere autorización por escrito del autor: <a href="mailto:legal@bambohouse.com">legal@bambohouse.com</a>.</p>
+  </section>
+  <footer>
+    <p><a href="./#es">BamboLens</a> · <a href="privacy">Política de privacidad (en inglés)</a></p>
+    <p>© 2020–2026 Wesley Montoza Vilas Boas de Oliveira (BamboHouse). Todos los derechos reservados.</p>
+  </footer>
+</main>
+
+<main id="de" class="alt" lang="de">
+  <p class="lang"><a href="#en">English</a> · <a href="#pt">Português</a> · <a href="#es">Español</a> · <strong>Deutsch</strong> · <a href="#fr">Français</a></p>
+  <header>
+    <a href="./#de"><img src="icon.svg" alt="BamboLens-Symbol"></a>
+    <div>
+      <h1>BamboLens-Modelle</h1>
+      <p class="tagline">Kostenlose 3D-Modelle vom Entwickler von BamboLens.</p>
+    </div>
+  </header>
+  <p class="how">Tippe im BamboLens-Portal auf <strong>Herunterladen</strong>: Das Teil landet direkt in Originalgröße auf deinem Tisch.</p>
+  <div class="grid">
+    <section class="card"><img src="img/models/dog-paw-doorstop.webp" alt="Türstopper – Hundepfote" loading="lazy"><div class="body">
+      <h2>Türstopper – Hundepfote</h2><p>34 × 93 × 12 mm · STL</p>
+      <a class="dl" href="downloads/dog-paw-doorstop.stl" download>Herunterladen</a></div></section>
+    <section class="card"><img src="img/models/cat-paw-doorstop.webp" alt="Türstopper – Katzenpfote" loading="lazy"><div class="body">
+      <h2>Türstopper – Katzenpfote</h2><p>48 × 98 × 12 mm · STL</p>
+      <a class="dl" href="downloads/cat-paw-doorstop.stl" download>Herunterladen</a></div></section>
+    <section class="card"><img src="img/models/pen-stand.webp" alt="Stiftehalter" loading="lazy"><div class="body">
+      <h2>Stiftehalter</h2><p>60 × 60 × 101 mm · STL</p>
+      <a class="dl" href="downloads/pen-stand.stl" download>Herunterladen</a></div></section>
+    <section class="card"><img src="img/models/egg-cup.webp" alt="Eierbecher" loading="lazy"><div class="body">
+      <h2>Eierbecher</h2><p>50 × 50 × 68 mm · STL</p>
+      <a class="dl" href="downloads/egg-cup.stl" download>Herunterladen</a></div></section>
+    <section class="card"><img src="img/models/book-tablet-stand.webp" alt="Buch- und Tablet-Ständer" loading="lazy"><div class="body">
+      <h2>Buch- und Tablet-Ständer</h2><p>155 × 93 × 126 mm · STL</p>
+      <a class="dl" href="downloads/book-tablet-stand.stl" download>Herunterladen</a></div></section>
+    <section class="card"><img src="img/models/headphone-stand.webp" alt="Kopfhörerständer" loading="lazy"><div class="body">
+      <h2>Kopfhörerständer</h2><p>2 Teile + Stift · 27 cm hoch montiert · für kleine Drucker (140 mm) · ZIP</p>
+      <a class="dl" href="downloads/headphone-stand.zip" download>Herunterladen</a></div></section>
+    <section class="card"><img src="img/models/door-clamp.webp" alt="Türklemme" loading="lazy"><div class="body">
+      <h2>Türklemme</h2><p>2 Teile · je 40 × 60 × 20 mm · ZIP</p>
+      <a class="dl" href="downloads/door-clamp.zip" download>Herunterladen</a></div></section>
+  </div>
+  <section class="license">
+    <h2>Lizenz: kostenlos für den privaten Gebrauch</h2>
+    <p>Du darfst diese Modelle für den eigenen Gebrauch beliebig herunterladen und drucken. Der Verkauf der Dateien oder der gedruckten Teile sowie die Veröffentlichung der Dateien an anderer Stelle erfordern die schriftliche Genehmigung des Autors: <a href="mailto:legal@bambohouse.com">legal@bambohouse.com</a>.</p>
+  </section>
+  <footer>
+    <p><a href="./#de">BamboLens</a> · <a href="privacy">Datenschutzerklärung (auf Englisch)</a></p>
+    <p>© 2020–2026 Wesley Montoza Vilas Boas de Oliveira (BamboHouse). Alle Rechte vorbehalten.</p>
+  </footer>
+</main>
+
+<main id="fr" class="alt" lang="fr">
+  <p class="lang"><a href="#en">English</a> · <a href="#pt">Português</a> · <a href="#es">Español</a> · <a href="#de">Deutsch</a> · <strong>Français</strong></p>
+  <header>
+    <a href="./#fr"><img src="icon.svg" alt="Icône de BamboLens"></a>
+    <div>
+      <h1>Modèles BamboLens</h1>
+      <p class="tagline">Des modèles 3D gratuits, créés par l'auteur de BamboLens.</p>
+    </div>
+  </header>
+  <p class="how">Dans le portail de BamboLens, touchez <strong>Télécharger</strong> : la pièce arrive directement sur votre bureau, en taille réelle.</p>
+  <div class="grid">
+    <section class="card"><img src="img/models/dog-paw-doorstop.webp" alt="Butoir de porte – patte de chien" loading="lazy"><div class="body">
+      <h2>Butoir de porte – patte de chien</h2><p>34 × 93 × 12 mm · STL</p>
+      <a class="dl" href="downloads/dog-paw-doorstop.stl" download>Télécharger</a></div></section>
+    <section class="card"><img src="img/models/cat-paw-doorstop.webp" alt="Butoir de porte – patte de chat" loading="lazy"><div class="body">
+      <h2>Butoir de porte – patte de chat</h2><p>48 × 98 × 12 mm · STL</p>
+      <a class="dl" href="downloads/cat-paw-doorstop.stl" download>Télécharger</a></div></section>
+    <section class="card"><img src="img/models/pen-stand.webp" alt="Porte-stylos" loading="lazy"><div class="body">
+      <h2>Porte-stylos</h2><p>60 × 60 × 101 mm · STL</p>
+      <a class="dl" href="downloads/pen-stand.stl" download>Télécharger</a></div></section>
+    <section class="card"><img src="img/models/egg-cup.webp" alt="Coquetier" loading="lazy"><div class="body">
+      <h2>Coquetier</h2><p>50 × 50 × 68 mm · STL</p>
+      <a class="dl" href="downloads/egg-cup.stl" download>Télécharger</a></div></section>
+    <section class="card"><img src="img/models/book-tablet-stand.webp" alt="Support pour livre et tablette" loading="lazy"><div class="body">
+      <h2>Support pour livre et tablette</h2><p>155 × 93 × 126 mm · STL</p>
+      <a class="dl" href="downloads/book-tablet-stand.stl" download>Télécharger</a></div></section>
+    <section class="card"><img src="img/models/headphone-stand.webp" alt="Support pour casque audio" loading="lazy"><div class="body">
+      <h2>Support pour casque audio</h2><p>2 pièces + goupille · 27 cm de haut une fois monté · conçu pour les petites imprimantes (140 mm) · ZIP</p>
+      <a class="dl" href="downloads/headphone-stand.zip" download>Télécharger</a></div></section>
+    <section class="card"><img src="img/models/door-clamp.webp" alt="Bloque-porte" loading="lazy"><div class="body">
+      <h2>Bloque-porte</h2><p>2 pièces · 40 × 60 × 20 mm chacune · ZIP</p>
+      <a class="dl" href="downloads/door-clamp.zip" download>Télécharger</a></div></section>
+  </div>
+  <section class="license">
+    <h2>Licence : usage personnel, gratuit</h2>
+    <p>Vous pouvez télécharger et imprimer ces modèles pour votre usage personnel, autant que vous le souhaitez. La vente des fichiers ou des pièces imprimées, ou la publication des fichiers ailleurs, nécessite l'autorisation écrite de l'auteur : <a href="mailto:legal@bambohouse.com">legal@bambohouse.com</a>.</p>
+  </section>
+  <footer>
+    <p><a href="./#fr">BamboLens</a> · <a href="privacy">Politique de confidentialité (en anglais)</a></p>
+    <p>© 2020–2026 Wesley Montoza Vilas Boas de Oliveira (BamboHouse). Tous droits réservés.</p>
+  </footer>
+</main>
+
 <main id="en">
-  <p class="lang"><strong>English</strong> · <a href="#pt">Português</a></p>
+  <p class="lang"><strong>English</strong> · <a href="#pt">Português</a> · <a href="#es">Español</a> · <a href="#de">Deutsch</a> · <a href="#fr">Français</a></p>
   <header>
     <a href="./"><img src="icon.svg" alt="BamboLens icon"></a>
     <div>

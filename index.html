@@ -40,23 +40,29 @@
   .shots figcaption { font-size: .85rem; color: var(--muted); margin-top: 4px; }
   @media (max-width: 480px) { .shots { grid-template-columns: 1fr; } }
   footer { border-top: 1px solid var(--line); margin-top: 32px; padding-top: 16px; color: var(--muted); font-size: .9rem; }
-  /* Português aparece com #pt no endereço; inglês é o padrão. */
-  #pt { display: none; }
-  #pt:target { display: block; }
-  #pt:target ~ #en { display: none; }
-  /* Sem #pt nem #en no endereço, navegador em português (classe "pt", posta pelo script abaixo) abre em português. */
-  html.pt:not(:has(#en:target)) #pt { display: block; }
-  html.pt:not(:has(#en:target)) #en { display: none; }
+  /* Inglês é o padrão. Os outros idiomas aparecem com #pt, #es, #de ou #fr no endereço. */
+  main.alt { display: none; }
+  main.alt:target { display: block; }
+  body:has(main.alt:target) #en { display: none; }
+  /* Sem idioma no endereço, o navegador em pt, es, de ou fr (data-lang, posto pelo script abaixo) abre nesse idioma. */
+  html[data-lang="pt"]:not(:has(main:target)) #pt,
+  html[data-lang="es"]:not(:has(main:target)) #es,
+  html[data-lang="de"]:not(:has(main:target)) #de,
+  html[data-lang="fr"]:not(:has(main:target)) #fr { display: block; }
+  html[data-lang]:not(:has(main:target)) #en { display: none; }
   @media (max-width: 480px) { header { flex-direction: column; align-items: flex-start; } h1 { font-size: 1.8rem; } }
 </style>
 <script>
-  if (!location.hash && /^pt/i.test((navigator.languages && navigator.languages[0]) || navigator.language || "")) document.documentElement.classList.add("pt");
+  (function () {
+    var l = ((navigator.languages && navigator.languages[0]) || navigator.language || "").slice(0, 2).toLowerCase();
+    if (!location.hash && ["pt", "es", "de", "fr"].indexOf(l) >= 0) document.documentElement.setAttribute("data-lang", l);
+  })();
 </script>
 </head>
 <body>
 
-<main id="pt" lang="pt-BR">
-  <p class="lang"><a href="#en">English</a> · <strong>Português</strong></p>
+<main id="pt" class="alt" lang="pt-BR">
+  <p class="lang"><a href="#en">English</a> · <strong>Português</strong> · <a href="#es">Español</a> · <a href="#de">Deutsch</a> · <a href="#fr">Français</a></p>
   <header>
     <img src="icon.svg" alt="Ícone do BamboLens">
     <div>
@@ -108,8 +114,161 @@
   </footer>
 </main>
 
+<main id="es" class="alt" lang="es">
+  <p class="lang"><a href="#en">English</a> · <a href="#pt">Português</a> · <strong>Español</strong> · <a href="#de">Deutsch</a> · <a href="#fr">Français</a></p>
+  <header>
+    <img src="icon.svg" alt="Icono de BamboLens">
+    <div>
+      <h1>BamboLens</h1>
+      <p class="tagline">Mira tus piezas 3D a tamaño real, sobre tu mesa, antes de imprimir.</p>
+      <a class="store" href="https://www.meta.com/experiences/1455640150956913/">Disponible en la Meta Horizon Store</a>
+    </div>
+  </header>
+  <p>Abre archivos STL, 3MF o ZIP y coloca la pieza sobre tu mesa real, a tamaño real, con el passthrough de Meta Quest. Comprueba medidas, encaje y color del filamento antes de gastar material y tiempo de impresión.</p>
+  <div class="shots">
+    <figure><img src="img/app/hand.webp" width="1280" height="720" alt="Pieza impresa en la mano junto al modelo 3D a tamaño real sobre la mesa"><figcaption>La pieza impresa junto al modelo, a tamaño real.</figcaption></figure>
+    <figure><img src="img/app/portal.webp" width="1280" height="720" loading="lazy" alt="Portal de modelos dentro de la app"><figcaption>Descarga modelos sin quitarte el visor.</figcaption></figure>
+    <figure><img src="img/app/place.webp" width="1280" height="720" loading="lazy" alt="Eligiendo dónde va la pieza sobre la mesa"><figcaption>Apunta a la mesa y elige el lugar.</figcaption></figure>
+    <figure><img src="img/app/colors.webp" width="1280" height="720" loading="lazy" alt="Paleta de colores de filamento"><figcaption>Colores de filamento reales.</figcaption></figure>
+    <figure><img src="img/app/desk.webp" width="1280" height="720" loading="lazy" alt="Varias piezas sobre la mesa"><figcaption>Varias piezas sobre la mesa, con gravedad y colisión.</figcaption></figure>
+  </div>
+  <div class="grid">
+    <section class="card"><h2>Sobre tu mesa, a tamaño real</h2><ul>
+      <li>Apunta a la mesa y elige dónde va la pieza.</li>
+      <li>Gravedad y colisión: las piezas se asientan sobre su cara más estable y se pueden apilar.</li>
+      <li>Cotas en milímetros alrededor de la pieza.</li></ul></section>
+    <section class="card"><h2>Colores de filamento reales</h2><ul>
+      <li>Paleta de colores de PLA, PLA mate, PLA seda, PETG, ABS/ASA y TPU.</li>
+      <li>Los archivos 3MF multicolor se abren con los colores del proyecto.</li></ul></section>
+    <section class="card"><h2>Antes de imprimir</h2><ul>
+      <li>Volumen y filamento estimado en el material del color elegido.</li>
+      <li>Te dice si la pieza cabe en tu impresora, entre los modelos más vendidos.</li></ul></section>
+    <section class="card"><h2>Tus archivos, tal como vienen</h2><ul>
+      <li>STL, 3MF y paquetes ZIP con varias piezas.</li>
+      <li>Ábrelos directamente desde otras apps de Quest con «Abrir con» o «Compartir».</li>
+      <li>mm, cm o pulgadas; opción de eje Z hacia arriba.</li>
+      <li>Los modelos grandes se simplifican automáticamente.</li></ul></section>
+    <section class="card"><h2>Portal de modelos</h2><ul>
+      <li>Navega por sitios de modelos 3D dentro de la app y descarga un archivo directamente a tu mesa, sin quitarte el visor.</li>
+      <li><a href="models#es">Modelos gratis para probar</a></li></ul></section>
+    <section class="card"><h2>Privado por defecto</h2><ul>
+      <li>Sin cuenta, sin anuncios y sin recopilación de datos: tus archivos y tu entorno se quedan en tu dispositivo.</li>
+      <li><a href="privacy">Política de privacidad (en inglés)</a></li></ul></section>
+    <section class="card"><h2>Contacto</h2><ul>
+      <li>Soporte: <a href="mailto:support@bambohouse.com">support@bambohouse.com</a></li>
+      <li>Privacidad y asuntos legales: <a href="mailto:legal@bambohouse.com">legal@bambohouse.com</a></li></ul></section>
+  </div>
+  <p>Para Meta Quest 3 y Quest 3S. Interfaz en 20 idiomas.</p>
+  <footer>
+    <p>BamboLens no está afiliado a ningún sitio de modelos 3D ni a fabricantes de filamento. Las marcas pertenecen a sus respectivos propietarios. Meta y Meta Quest son marcas de Meta Platforms, Inc.</p>
+    <p>© 2026 Wesley Montoza Vilas Boas de Oliveira (BamboHouse). Todos los derechos reservados.</p>
+  </footer>
+</main>
+
+<main id="de" class="alt" lang="de">
+  <p class="lang"><a href="#en">English</a> · <a href="#pt">Português</a> · <a href="#es">Español</a> · <strong>Deutsch</strong> · <a href="#fr">Français</a></p>
+  <header>
+    <img src="icon.svg" alt="BamboLens-Symbol">
+    <div>
+      <h1>BamboLens</h1>
+      <p class="tagline">Sieh deine 3D-Drucke in Originalgröße auf deinem Schreibtisch, bevor du druckst.</p>
+      <a class="store" href="https://www.meta.com/experiences/1455640150956913/">Jetzt im Meta Horizon Store</a>
+    </div>
+  </header>
+  <p>Öffne STL-, 3MF- oder ZIP-Dateien und stelle das Teil in Originalgröße auf deinen echten Schreibtisch – mit dem Passthrough der Meta Quest. Prüfe Maße, Passform und Filamentfarbe, bevor du Material und Druckzeit investierst.</p>
+  <div class="shots">
+    <figure><img src="img/app/hand.webp" width="1280" height="720" alt="Gedrucktes Teil in der Hand neben dem 3D-Modell in Originalgröße auf dem Tisch"><figcaption>Das gedruckte Teil neben dem Modell, in Originalgröße.</figcaption></figure>
+    <figure><img src="img/app/portal.webp" width="1280" height="720" loading="lazy" alt="Modellportal in der App"><figcaption>Modelle herunterladen, ohne das Headset abzunehmen.</figcaption></figure>
+    <figure><img src="img/app/place.webp" width="1280" height="720" loading="lazy" alt="Platz für das Teil auf dem Tisch wählen"><figcaption>Auf den Tisch zeigen und den Platz wählen.</figcaption></figure>
+    <figure><img src="img/app/colors.webp" width="1280" height="720" loading="lazy" alt="Filament-Farbpalette"><figcaption>Echte Filamentfarben.</figcaption></figure>
+    <figure><img src="img/app/desk.webp" width="1280" height="720" loading="lazy" alt="Mehrere Teile auf dem Tisch"><figcaption>Mehrere Teile auf dem Tisch, mit Schwerkraft und Kollision.</figcaption></figure>
+  </div>
+  <div class="grid">
+    <section class="card"><h2>Auf deinem Tisch, in Originalgröße</h2><ul>
+      <li>Zeig auf den Tisch und wähle, wo das Teil hin soll.</li>
+      <li>Schwerkraft und Kollision: Teile legen sich auf ihre stabilste Fläche und lassen sich stapeln.</li>
+      <li>Maße in Millimetern rund um das Teil.</li></ul></section>
+    <section class="card"><h2>Echte Filamentfarben</h2><ul>
+      <li>Farbpalette aus PLA, mattem PLA, Silk-PLA, PETG, ABS/ASA und TPU.</li>
+      <li>Mehrfarbige 3MF-Dateien öffnen sich mit den Farben des Projekts.</li></ul></section>
+    <section class="card"><h2>Vor dem Druck</h2><ul>
+      <li>Volumen und geschätzter Filamentverbrauch im Material der gewählten Farbe.</li>
+      <li>Zeigt, ob das Teil auf deinen Drucker passt – unter den meistverkauften Modellen.</li></ul></section>
+    <section class="card"><h2>Deine Dateien, wie sie kommen</h2><ul>
+      <li>STL, 3MF und ZIP-Pakete mit mehreren Teilen.</li>
+      <li>Direkt aus anderen Quest-Apps öffnen mit „Öffnen mit“ oder „Teilen“.</li>
+      <li>mm, cm oder Zoll; Option Z-Achse nach oben.</li>
+      <li>Große Modelle werden automatisch vereinfacht.</li></ul></section>
+    <section class="card"><h2>Modellportal</h2><ul>
+      <li>Durchstöbere 3D-Modell-Websites in der App und lade eine Datei direkt auf deinen Tisch, ohne das Headset abzunehmen.</li>
+      <li><a href="models#de">Kostenlose Modelle zum Ausprobieren</a></li></ul></section>
+    <section class="card"><h2>Privat von Anfang an</h2><ul>
+      <li>Kein Konto, keine Werbung, keine Datenerfassung: Deine Dateien und dein Raum bleiben auf deinem Gerät.</li>
+      <li><a href="privacy">Datenschutzerklärung (auf Englisch)</a></li></ul></section>
+    <section class="card"><h2>Kontakt</h2><ul>
+      <li>Support: <a href="mailto:support@bambohouse.com">support@bambohouse.com</a></li>
+      <li>Datenschutz und Rechtliches: <a href="mailto:legal@bambohouse.com">legal@bambohouse.com</a></li></ul></section>
+  </div>
+  <p>Für Meta Quest 3 und Quest 3S. Oberfläche in 20 Sprachen.</p>
+  <footer>
+    <p>BamboLens ist mit keiner 3D-Modell-Website und keinem Filamenthersteller verbunden. Marken gehören ihren jeweiligen Inhabern. Meta und Meta Quest sind Marken der Meta Platforms, Inc.</p>
+    <p>© 2026 Wesley Montoza Vilas Boas de Oliveira (BamboHouse). Alle Rechte vorbehalten.</p>
+  </footer>
+</main>
+
+<main id="fr" class="alt" lang="fr">
+  <p class="lang"><a href="#en">English</a> · <a href="#pt">Português</a> · <a href="#es">Español</a> · <a href="#de">Deutsch</a> · <strong>Français</strong></p>
+  <header>
+    <img src="icon.svg" alt="Icône de BamboLens">
+    <div>
+      <h1>BamboLens</h1>
+      <p class="tagline">Voyez vos pièces 3D en taille réelle, sur votre bureau, avant de les imprimer.</p>
+      <a class="store" href="https://www.meta.com/experiences/1455640150956913/">Disponible sur le Meta Horizon Store</a>
+    </div>
+  </header>
+  <p>Ouvrez des fichiers STL, 3MF ou ZIP et posez la pièce sur votre vrai bureau, en taille réelle, grâce au passthrough du Meta Quest. Vérifiez les dimensions, l'ajustement et la couleur du filament avant de dépenser matière et temps d'impression.</p>
+  <div class="shots">
+    <figure><img src="img/app/hand.webp" width="1280" height="720" alt="Pièce imprimée en main à côté du modèle 3D en taille réelle sur le bureau"><figcaption>La pièce imprimée à côté du modèle, en taille réelle.</figcaption></figure>
+    <figure><img src="img/app/portal.webp" width="1280" height="720" loading="lazy" alt="Portail de modèles dans l'application"><figcaption>Téléchargez des modèles sans retirer le casque.</figcaption></figure>
+    <figure><img src="img/app/place.webp" width="1280" height="720" loading="lazy" alt="Choix de l'emplacement de la pièce sur le bureau"><figcaption>Visez le bureau et choisissez l'emplacement.</figcaption></figure>
+    <figure><img src="img/app/colors.webp" width="1280" height="720" loading="lazy" alt="Palette de couleurs de filament"><figcaption>De vraies couleurs de filament.</figcaption></figure>
+    <figure><img src="img/app/desk.webp" width="1280" height="720" loading="lazy" alt="Plusieurs pièces sur le bureau"><figcaption>Plusieurs pièces sur le bureau, avec gravité et collisions.</figcaption></figure>
+  </div>
+  <div class="grid">
+    <section class="card"><h2>Sur votre bureau, en taille réelle</h2><ul>
+      <li>Visez le bureau et choisissez où placer la pièce.</li>
+      <li>Gravité et collisions : les pièces se posent sur leur face la plus stable et peuvent s'empiler.</li>
+      <li>Cotes en millimètres autour de la pièce.</li></ul></section>
+    <section class="card"><h2>De vraies couleurs de filament</h2><ul>
+      <li>Une palette de couleurs PLA, PLA mat, PLA soie, PETG, ABS/ASA et TPU.</li>
+      <li>Les fichiers 3MF multicolores s'ouvrent avec les couleurs du projet.</li></ul></section>
+    <section class="card"><h2>Avant d'imprimer</h2><ul>
+      <li>Volume et filament estimé dans la matière de la couleur choisie.</li>
+      <li>Indique si la pièce tient sur votre imprimante, parmi les modèles les plus vendus.</li></ul></section>
+    <section class="card"><h2>Vos fichiers, tels quels</h2><ul>
+      <li>STL, 3MF et archives ZIP de plusieurs pièces.</li>
+      <li>Ouvrez-les directement depuis d'autres applications du Quest avec « Ouvrir avec » ou « Partager ».</li>
+      <li>mm, cm ou pouces ; option axe Z vers le haut.</li>
+      <li>Les gros modèles sont simplifiés automatiquement.</li></ul></section>
+    <section class="card"><h2>Portail de modèles</h2><ul>
+      <li>Parcourez des sites de modèles 3D dans l'application et téléchargez un fichier directement sur votre bureau, sans retirer le casque.</li>
+      <li><a href="models#fr">Modèles gratuits à essayer</a></li></ul></section>
+    <section class="card"><h2>Privé par défaut</h2><ul>
+      <li>Pas de compte, pas de publicité, aucune collecte de données : vos fichiers et votre pièce restent sur votre appareil.</li>
+      <li><a href="privacy">Politique de confidentialité (en anglais)</a></li></ul></section>
+    <section class="card"><h2>Contact</h2><ul>
+      <li>Assistance : <a href="mailto:support@bambohouse.com">support@bambohouse.com</a></li>
+      <li>Confidentialité et juridique : <a href="mailto:legal@bambohouse.com">legal@bambohouse.com</a></li></ul></section>
+  </div>
+  <p>Pour Meta Quest 3 et Quest 3S. Interface en 20 langues.</p>
+  <footer>
+    <p>BamboLens n'est affilié à aucun site de modèles 3D ni à aucun fabricant de filament. Les marques citées appartiennent à leurs propriétaires respectifs. Meta et Meta Quest sont des marques de Meta Platforms, Inc.</p>
+    <p>© 2026 Wesley Montoza Vilas Boas de Oliveira (BamboHouse). Tous droits réservés.</p>
+  </footer>
+</main>
+
 <main id="en">
-  <p class="lang"><strong>English</strong> · <a href="#pt">Português</a></p>
+  <p class="lang"><strong>English</strong> · <a href="#pt">Português</a> · <a href="#es">Español</a> · <a href="#de">Deutsch</a> · <a href="#fr">Français</a></p>
   <header>
     <img src="icon.svg" alt="BamboLens icon">
     <div>
